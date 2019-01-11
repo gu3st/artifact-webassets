@@ -20,9 +20,9 @@ function spriteTaskGenerator(imgRoot, set, name, sizePrefix, imageExt) {
     return function () {
         var name_size = sizePrefix ?  name + '_' + sizePrefix : name;
         var spriteData = gulp.src('./tmp/img/' + set + '/' + name_size + '/*').pipe(spritesmith({
-            imgName: name_size + '_sprite.' + imageExt,
+            imgName: set + '_' + name_size + '_sprite.' + imageExt,
             imgPath: imgRoot + name_size + '_sprite.' + imageExt,
-            cssName: name_size + '_sprite_' + imageExt + '.css',
+            cssName: set + '_' + name_size + '_sprite_' + imageExt + '.css',
             cssOpts: {
                 cssSelector: function (sprite) {
                     return '.' + set + '-' + name + '-sprite-' + sprite.name.replace('.', '-') + (sizePrefix ? '.' + set + '-' + name + '-sprite-' + sizePrefix : '');
@@ -136,8 +136,8 @@ function taskGenerator(imgRoot, set, name, sizes, imgTypes) {
     gulp.task(set + '/' + name, gulpSequence.apply(this, taskList));
 }
 
-taskGenerator(imgRoot, 'set00', 'hero_icons', null, ['png', 'jpg']);
-taskGenerator(imgRoot, 'set01', 'hero_icons', null, ['png', 'jpg']);
+taskGenerator(imgRoot, 'set00', 'hero_icons', null, ['png']);
+taskGenerator(imgRoot, 'set01', 'hero_icons', null, ['png']);
 //taskGenerator(imgRoot, 'heroes', [[64, 36], [32, 18]], ['png', 'jpg']);
 //taskGenerator(imgRoot, 'portraits', [[64, 84], [32, 42]], ['png', 'jpg']);
 //taskGenerator(imgRoot, 'items', [[70, 50], [50, 36], [36, 26], [25, 18]], ['png', 'jpg']);
