@@ -20,7 +20,7 @@
     "gulp-image-resize": "^0.10.0",
     "gulp-imagemin": "^3.0.3",
     "gulp-sequence": "^0.4.5",
-    "gulp.spritesmith": "^6.2.1",
+    "gulp.spritesmith": "^6.13.0",
     "merge-stream": "^1.0.0",
     "vinyl-buffer": "^1.0.0"
   },
